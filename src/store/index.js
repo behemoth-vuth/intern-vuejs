@@ -25,11 +25,11 @@ export default new Vuex.Store({
       const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
       commit('setDatas', response.data)
     },
-    async createDatas ({ commit, title }) {
-      const response = await axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false })
+    async createDatas ({ commit }, title) {
+      const response = await axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: true })
       commit('addDatas', response.data)
     },
-    async deleteDatas ({ commit, id }) {
+    async deleteDatas ({ commit }, id) {
       await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
       commit('removeDatas', id)
     }

@@ -5,7 +5,6 @@
       <form @submit="onSubmit">
       <input type="text" v-model="title" placeholder="add Data...">
       <input type="submit" value="Submit">
-      <i @click="deleteDatas(Data.id)" class='bx bx-trash'></i>
       </form>
   </div>
 </div>
@@ -21,7 +20,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['createDatas', 'deleteDatas']),
+    ...mapActions(['createDatas']),
     onSubmit (e) {
       e.preventDefault()
       this.createDatas(this.title)
@@ -43,16 +42,10 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  flex: 3;
+  flex: 2;
   background: #33B8FF;
   border: 1px solid #33B8FF;
   cursor: pointer;
 }
-i{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #fff;
-  cursor: pointer;
-}
+
 </style>

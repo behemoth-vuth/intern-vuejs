@@ -1,7 +1,8 @@
 <template>
   <div class="Datas">
       <div v-for="Data in Datas" :key="Data.id" class="Data">{{Data.title}}
-       <br/> {{Data.completed}}</div>
+       <br/> {{Data.completed}}
+       <i @click="deleteDatas(Data.id)" class='bx bx-trash'></i></div>
   </div>
 </template>
 
@@ -10,7 +11,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'AxiTest',
   methods: {
-    ...mapActions(['fetchDatas'])
+    ...mapActions(['fetchDatas', 'deleteDatas'])
   },
   computed: mapState(['Datas']),
   created () {
@@ -34,5 +35,12 @@ export default {
     text-align: center;
     position: relative;
     cursor: pointer;
+}
+i{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
 }
 </style>
