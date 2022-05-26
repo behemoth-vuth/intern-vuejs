@@ -1,22 +1,15 @@
 <template>
-  <div id="container">
-    <CreateView/>
-    <AxiTest/>
-  </div>
+  <div class="container">
+      <router-link to="/">Home</router-link>
+      <router-view/>
+    </div>
 </template>
 
 <script>
-import AxiTest from './components/AxiTest.vue'
-import CreateView from './components/CreateView.vue'
 export default {
-  name: 'App',
-  components: {
-    AxiTest,
-    CreateView
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-
 </style>
