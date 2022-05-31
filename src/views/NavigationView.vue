@@ -165,11 +165,6 @@
 
 <script>
 export default {
-  methods: {
-    feat_btn () {
-      alert('get')
-    }
-  }
 }
 </script>
 
